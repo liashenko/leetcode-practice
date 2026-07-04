@@ -1,3 +1,5 @@
+// bruteforce: Find left and right maximums on the fly for each position, O(N^2) time
+// solution: Use two pointers from ends, comparing maximum heights to accumulate water trapped at the lower boundary, O(N) time / O(1) space
 class Solution {
     public int trap(int[] height) {
         int area = 0;

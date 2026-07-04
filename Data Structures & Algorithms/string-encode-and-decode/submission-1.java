@@ -1,3 +1,5 @@
+// bruteforce: Use a simple delimiter that could occur in strings, potentially failing decoding
+// solution: Encode using string length + '#' delimiter prefix, and decode by parsing length first, O(N) time / O(N) space
 class Solution {
 
     public String encode(List<String> strs) {

@@ -1,3 +1,5 @@
+// bruteforce: Validate each cell iteratively by checking entire row, column, and subgrid, O(N^3) time
+// solution: Check Sudoku validity in a single pass using integer bitmasks for row, column, and subgrid tracking, O(1) time / O(1) space
 class Solution {
     public boolean isValidSudoku(char[][] board) {
         int n = 9;

@@ -1,3 +1,5 @@
+// bruteforce: Sort array elements by frequency directly, O(N log N) time
+// solution: Use Bucket Sort where array indices represent frequencies to group elements, O(N) time / O(N) space
 class Solution {
     public int[] topKFrequent(int[] nums, int k) {
         Map<Integer, Integer> freq = new HashMap<>();

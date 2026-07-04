@@ -1,3 +1,5 @@
+// bruteforce: Check all substrings to find the shortest containing all target characters, O(N^3) time
+// solution: Use a sliding window with maps tracking character frequencies and a match counter to shrink dynamically, O(N) time / O(N) space
 class Solution {
     public String minWindow(String s, String t) {
         if (t.length() > s.length()) {

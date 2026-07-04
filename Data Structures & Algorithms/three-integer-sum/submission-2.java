@@ -1,3 +1,5 @@
+// bruteforce: Check all triplets using three nested loops, O(N^3) time
+// solution: Sort the array and for each element use two pointers to find pairs that sum to the complement, O(N^2) time / O(N) space
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         // map - O(N) space

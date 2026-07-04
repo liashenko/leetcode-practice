@@ -1,3 +1,5 @@
+// bruteforce: Find left and right maximums on the fly for each position, O(N^2) time
+// solution: Precompute right maximums in an array and track left maximum on the fly to calculate trapped water, O(N) time / O(N) space
 class Solution {
     public int trap(int[] height) {
         int area = 0;

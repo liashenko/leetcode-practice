@@ -1,3 +1,5 @@
+// bruteforce: Loop through each element and check if any other element sums to target, O(N^2) time
+// solution: Build index map first, then lookup target complement for each index, O(N) time / O(N) space
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();

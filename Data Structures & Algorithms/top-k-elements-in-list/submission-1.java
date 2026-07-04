@@ -1,3 +1,5 @@
+// bruteforce: Sort array elements by frequency directly, O(N log N) time
+// solution: Map frequencies, then push elements to a Max Heap to retrieve the top k frequent elements, O(N log N) time / O(N) space
 class Solution {
     public int[] topKFrequent(int[] nums, int k) {
         Map<Integer, Integer> freq = new HashMap<>();

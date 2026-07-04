@@ -1,3 +1,5 @@
+// bruteforce: Sort array elements by frequency directly, O(N log N) time
+// solution: Sort boxed array with a custom comparator using frequency map lookups, O(N log N) time / O(N) space
 class Solution {
     public int[] topKFrequent(int[] nums, int k) {
         Map<Integer, Integer> freq = new HashMap<>();

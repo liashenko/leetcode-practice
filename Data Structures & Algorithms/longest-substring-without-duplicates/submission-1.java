@@ -1,3 +1,5 @@
+// bruteforce: Check all substrings for duplicates, O(N^3) time
+// solution: Use sliding window with a HashSet to store seen characters, shifting left pointer on duplicate, O(N) time / O(N) space
 class Solution {
     public int lengthOfLongestSubstring(String s) {
         int l = 0, r = 0;

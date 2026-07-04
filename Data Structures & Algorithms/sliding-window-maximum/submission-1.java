@@ -1,3 +1,5 @@
+// bruteforce: Find maximum in every window of size k, O(N * K) time
+// solution: Maintain a sliding window using a Priority Queue (Max Heap), polling out-of-bounds indices, O(N log N) time / O(N) space
 class Solution {
     public int[] maxSlidingWindow(int[] nums, int k) {
         // bruteforce

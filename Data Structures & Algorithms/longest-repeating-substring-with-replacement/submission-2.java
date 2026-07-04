@@ -1,3 +1,5 @@
+// bruteforce: Check all substrings and calculate max replacement counts, O(N^3) time
+// solution: Use sliding window keeping frequency map, shrinking when window size minus max frequency exceeds k, O(N) time / O(N) space
 class Solution {
     public int characterReplacement(String s, int k) {
         int left = 0, right = 0;

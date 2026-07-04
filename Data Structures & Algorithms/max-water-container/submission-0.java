@@ -1,3 +1,5 @@
+// bruteforce: Calculate area for every pair of boundaries, O(N^2) time
+// solution: Use two pointers from the boundaries, shifting the pointer pointing to smaller height inward, O(N) time / O(1) space
 class Solution {
     public int maxArea(int[] heights) {
         // [1,7,2,5,4,7,3,6]

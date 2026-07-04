@@ -1,3 +1,5 @@
+// bruteforce: Clean string and check all pairs from ends inward, O(N) time
+// solution: Clean alphanumeric characters to lowercase, reverse using StringBuilder, and check equality, O(N) time / O(N) space
 class Solution {
     public boolean isPalindrome(String s) {
         StringBuilder clean = new StringBuilder();

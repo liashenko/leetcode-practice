@@ -1,3 +1,5 @@
+// bruteforce: Generate all permutations of s1 and search them in s2, O(L1! * L2) time
+// solution: Use sliding window frequency arrays of size 26, matching s1's character profile in s2, O(L2) time / O(1) space
 class Solution {
     public boolean checkInclusion(String s1, String s2) {
         int[] a = new int[26];

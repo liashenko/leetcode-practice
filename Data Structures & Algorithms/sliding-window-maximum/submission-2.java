@@ -1,3 +1,5 @@
+// bruteforce: Find maximum in every window of size k, O(N * K) time
+// solution: Use a Monotonic Deque storing indices in decreasing order of element values to track maximum, O(N) time / O(K) space
 class Solution {
     public int[] maxSlidingWindow(int[] nums, int k) {
         // bruteforce

@@ -1,3 +1,5 @@
+// bruteforce: Sort array and find the longest consecutive run, O(N log N) time
+// solution: Populate a HashSet with integers, then build sequences starting only from sequence boundaries, O(N) time / O(N) space
 class Solution {
     public int longestConsecutive(int[] nums) {
         // bruteforce

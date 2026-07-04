@@ -1,3 +1,5 @@
+// bruteforce: Validate each cell iteratively by checking entire row, column, and subgrid, O(N^3) time
+// solution: Validate board in a single pass using HashMaps of character sets for rows, columns, and subgrids, O(1) time / O(1) space
 class Solution {
     public boolean isValidSudoku(char[][] board) {
         int n = 9;

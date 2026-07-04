@@ -1,3 +1,5 @@
+// bruteforce: Calculate product of all other elements for each index using nested loops, O(N^2) time
+// solution: Precompute prefix and suffix products, then multiply corresponding prefix and suffix value for each index, O(N) time / O(N) space
 class Solution {
     public int[] productExceptSelf(int[] nums) {
         // [1,2,4,6]
