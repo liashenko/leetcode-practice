@@ -1,3 +1,5 @@
+// bruteforce: For each car, check if it can catch up with any car ahead of it by comparing all pairs, O(N^2) time
+// solution: Sort cars by starting position, compute time to target, and traverse backwards to group fleets when a car is blocked by a slower car ahead, O(N log N) time / O(N) space
 class Solution {
     public int carFleet(int target, int[] position, int[] speed) {
         // p  id s t

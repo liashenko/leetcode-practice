@@ -1,3 +1,5 @@
+// bruteforce: Repeatedly replace matching adjacent parenthesis pairs in the string until no matches remain, O(N^2) time
+// solution: Use a Stack to push opening brackets and pop/verify them when matching closing brackets are encountered, O(N) time / O(N) space
 class Solution {
     Map<Character, Character> map = Map.of(
         '(', ')', '{', '}', '[',']'

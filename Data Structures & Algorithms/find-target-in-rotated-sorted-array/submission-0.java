@@ -1,3 +1,5 @@
+// bruteforce: Linear scan for target, O(N) time
+// solution: Binary search identifying sorted half via nums[l] <= nums[mid], check if target lies in sorted range, O(log N) time / O(1) space
 class Solution {
     public int search(int[] nums, int target) {
         int l = 0, r = nums.length-1;

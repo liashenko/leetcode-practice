@@ -1,3 +1,5 @@
+// bruteforce: Scan array linearly tracking the minimum, O(N) time
+// solution: Binary search comparing nums[mid] with nums[r] to locate rotation point, O(log N) time / O(1) space
 class Solution {
     public int findMin(int[] nums) {
         int l = 0, r = nums.length-1;

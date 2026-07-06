@@ -1,3 +1,5 @@
+// bruteforce: For each day, scan forward to find the next warmer day, O(N^2) time
+// solution: Use a monotonic decreasing stack storing indices to find the next warmer day in a single pass, O(N) time / O(N) space
 class Solution {
     public int[] dailyTemperatures(int[] t) {
         // bruteforce: just find next largest value O(N^2)

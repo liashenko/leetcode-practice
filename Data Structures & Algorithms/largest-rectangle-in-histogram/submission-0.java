@@ -1,3 +1,5 @@
+// bruteforce: Check all possible pairs of columns to calculate the maximum area rectangle, O(N^2) time
+// solution: Use a monotonic increasing stack to store column indices, computing area when a shorter column is encountered, O(N) time / O(N) space
 class Solution {
     public int largestRectangleArea(int[] heights) {
         // idea

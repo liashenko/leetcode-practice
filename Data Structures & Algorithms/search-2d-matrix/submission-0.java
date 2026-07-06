@@ -1,3 +1,5 @@
+// bruteforce: Flatten matrix and linear scan all elements, O(N*M) time
+// solution: Treat the matrix as a flattened 1D sorted array, binary search using row = mid/m, col = mid%m, O(log(N*M)) time / O(1) space
 class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
         // binary search

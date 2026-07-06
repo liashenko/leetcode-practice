@@ -1,3 +1,5 @@
+// bruteforce: Merge both arrays into one sorted array and find median, O(N+M) time / O(N+M) space
+// solution: Binary search partition point on the smaller array, validate left <= right across both arrays, O(log(min(N,M))) time / O(1) space
 class Solution {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         // not optimal: merge nums1 and nums2

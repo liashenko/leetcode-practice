@@ -16,7 +16,38 @@ A collection of Leetcode problem solutions implemented in Java.
   - Searching for pairs in a **sorted** array (e.g., Two Sum II, Three Sum).
   - Maximizing boundaries or trapping areas (e.g., Container With Most Water, Trapping Rain Water).
 
-### 2. Sliding Window
+### 2. Binary Search
+* **What it is**: A divide-and-conquer search algorithm that repeatedly divides a sorted search space in half, eliminating one side based on a comparison or predicate, narrowing in on the target in O(log N) time.
+
+* **How to use**:
+
+  - **Classic (exact match)** — find exact target in sorted array: `l=0, r=n-1`, check `nums[mid]`, narrow `l=mid+1` / `r=mid-1`, return index or `-1`.
+    - *When to use*: Searching for a specific value in a strictly sorted array with no duplicates.
+
+  - **Lower Bound** — first index where `value >= target`: `l=0, r=n`, shrink right on `nums[mid] >= target`, left on `<`, then verify `nums[l] == target`. Handles duplicates, points to first occurrence.
+    - *Example*: `[1, 2, 2, 2, 3]`, `lower_bound(2)` → index 1. `[1, 3, 5, 7]`, `lower_bound(4)` → index 2 (insertion point for missing value).
+    - *When to use*: Finding first occurrence in a sorted array with duplicates; finding insertion position for a value that may not exist.
+
+  - **Upper Bound** — first index where `value > target`: `l=0, r=n`, shrink right on `nums[mid] > target`, left on `<=`, then target at `l-1` if valid. `upperBound - 1` gives the last index where `value <= target`.
+    - *Example*: `[1, 2, 2, 2, 3]`, `upper_bound(2)` → index 4, so `upper_bound(2)-1` → index 3 (last 2). Count of 2s = `upper_bound(2) - lower_bound(2) = 3`.
+    - *When to use*: Range queries (count occurrences in sorted array); finding last valid position via `upperBound - 1`.
+
+  - **Search Space Reduction** — binary search on the answer space (not array indices). Define a monotonic `feasible(x)` predicate, binary search for the boundary value.
+    - *Examples*: Koko Eating Bananas (O(N log M), binary search min eating speed, each check sums pile / speed across N piles), Capacity to Ship Packages, Find Peak in Rotated Array.
+    - *Rotated array note*: 
+      - **Find Min** — compare `nums[mid]` with `nums[r]`. If `nums[mid] < nums[r]`, the min is left (including mid), else right (excluding mid) → lower bound search on the rotated array.
+      - **Search Target** — determine the sorted half via `nums[l] <= nums[mid]`. If left is sorted and target falls in `[nums[l], nums[mid]]`, search left; else search right. If right is sorted and target falls in `[nums[mid], nums[r]]`, search right; else search left.
+    - *When to use*: Optimization problems with a monotonic predicate — minimize a maximum or maximize a minimum. If you can answer "is x feasible?" in O(N), binary search finds the boundary in O(N log range).
+
+  - **Array Partitioning** — binary search for the optimal split threshold with greedy validation.
+    - *Examples*: Split Array Largest Sum, Median of Two Sorted Arrays (partition both arrays so left half ≤ right half, binary search partition point in the smaller array).
+    - *When to use*: Dividing an array to optimize a metric; finding a partition point that satisfies a balanced condition.
+
+* **When to use binary search in general**:
+  - Searching in sorted arrays or monotonic conditions.
+  - Any problem where you can define a predicate that splits the space into false-true halves.
+
+### 3. Sliding Window
 * **What it is**: A technique that uses two pointers (`left` and `right`) to define a subsegment of an array or string, adjusting its boundaries dynamically or using a fixed size.
 * **How to use**:
   - Initialize `left = 0` and expand `right` to grow the window.
@@ -27,7 +58,7 @@ A collection of Leetcode problem solutions implemented in Java.
   - Problems involving contiguous subarrays or substrings.
   - Optimizing lengths (e.g., longest substring without duplicate characters, minimum window containing target characters).
 
-### 3. Prefix & Suffix Precomputation (Prefix Sum)
+### 4. Prefix & Suffix Precomputation (Prefix Sum)
 * **What it is**: Precomputing running totals, products, or min/max bounds from both directions (left-to-right and right-to-left) into auxiliary arrays.
 * **How to use**:
   - Create a `prefix` array: loop left-to-right, calculating `prefix[i] = prefix[i-1] * nums[i]`.
@@ -37,7 +68,7 @@ A collection of Leetcode problem solutions implemented in Java.
   - Excludable range queries (e.g., Product of Array Except Self).
   - Precomputing boundary limits (e.g., Trapping Rain Water standard solution).
 
-### 4. Monotonic Stack & Deque
+### 5. Monotonic Stack & Deque
 * **What it is**: A stack or double-ended queue (deque) that maintains its elements in a strictly increasing or decreasing order.
 * **How to use**:
   - Iterate through the array.
@@ -47,7 +78,7 @@ A collection of Leetcode problem solutions implemented in Java.
   - Finding the *next greater* or *next smaller* element in $O(N)$ time.
   - Tracking the maximum or minimum element in a dynamic/sliding window range.
 
-### 5. Bitmasking (Bit Manipulation)
+### 6. Bitmasking (Bit Manipulation)
 * **What it is**: Utilizing the individual bits of a primitive integer (like `int` or `long`) as a compact, high-performance boolean array or set.
 * **How to use**:
   - Map elements to a bit index (e.g., character `c - 'a'` or number `val - 1`).
@@ -58,7 +89,7 @@ A collection of Leetcode problem solutions implemented in Java.
   - When $O(1)$ auxiliary space is strictly required, replacing bulky collections like `HashSet`.
   - State tracking in finite sets (e.g., Valid Sudoku grid checks, grid-based pathfinding, subset selection).
 
-### 6. Bucket Sort (Frequency-to-Index Mapping)
+### 7. Bucket Sort (Frequency-to-Index Mapping)
 * **What it is**: A sorting optimization where you map frequency metrics to array indices. Since the maximum frequency of any element in an array of size $N$ is bounded by $N$, you can sort by frequency in $O(N)$ time.
 * **How to use**:
   - Build a frequency map of items.

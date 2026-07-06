@@ -1,3 +1,5 @@
+// bruteforce: Try each speed from 1 to max(piles), compute hours needed, O(max(piles) * N) time
+// solution: Binary search the minimum eating speed, check feasibility by computing total hours, O(N log M) time / O(1) space
 class Solution {
     public int minEatingSpeed(int[] piles, int h) {
         // 1 2 ... max(piles)

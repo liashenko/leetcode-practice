@@ -1,3 +1,5 @@
+// bruteforce: Scan the stack linearly on getMin() calls, O(N) time
+// solution: Store elements in a Stack as pairs of [value, running_minimum] to retrieve the minimum in O(1) time, O(1) query time / O(N) space
 class MinStack {
 
     Stack<int[]> st = new Stack<>();

@@ -1,3 +1,5 @@
+// bruteforce: For each get(key, timestamp), scan all timestamps for that key linearly, O(N) per query
+// solution: Store timestamps in sorted lists per key, use upper bound binary search to find largest timestamp <= target, O(log N) per query / O(N) space
 class TimeMap {
 
     Map<String, List<Integer>> timestamps = new HashMap<>();
